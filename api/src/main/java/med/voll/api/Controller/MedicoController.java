@@ -23,4 +23,9 @@ public class MedicoController {
     public void cadastrar(@RequestBody @Valid DadosCadastroMedico dados){
         repository.save(new Medico(dados));
     }
+    
+    @GetMapping
+    public List<DadosListagemMedico> listar(){
+        return repository.findAll();
+    }
 }
